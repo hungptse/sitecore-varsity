@@ -9,9 +9,10 @@ namespace code.Controllers
     public class CourseController : Controller
     {
         // GET: Course
-        public ActionResult Index()
+        public ActionResult ListCourse()
         {
-            return View();
+            var courses = Sitecore.Context.Item.GetChildren().ToArray();
+            return View("~/Views/Components/Course.cshtml", courses);
         }
     }
 }
