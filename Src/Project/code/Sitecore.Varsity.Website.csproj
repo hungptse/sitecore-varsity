@@ -145,6 +145,7 @@
     <Content Include="Views\Components\Breadcrumb.cshtml" />
     <Content Include="Views\Components\Contact.cshtml" />
     <Content Include="Views\Components\Course.cshtml" />
+    <Content Include="Views\Components\CourseDetail.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
