@@ -15,10 +15,10 @@ namespace code.Controllers
             return View("~/Views/Components/Course.cshtml", courses);
         }
 
-        public ActionResult DetailCourse(string ID)
+        public ActionResult DetailCourse(string Name)
         {
-            var courseExisted = Sitecore.Context.Item.Axes.GetDescendants().FirstOrDefault(course => course.ID.ToString().Equals(ID));
-            return View("~/Views/Components/CourseDetail.cshtml", courseExisted);
+            var courseExisted = Sitecore.Context.Item;
+            return View("~/Views/Components/CourseDetail.cshtml",courseExisted);
         }
     }
 }

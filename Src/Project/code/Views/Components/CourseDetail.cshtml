@@ -1,4 +1,6 @@
-﻿<section id="mu-course-content">
+﻿@model Sitecore.Data.Items.Item
+@using Sitecore.Mvc
+<section id="mu-course-content">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -11,20 +13,20 @@
                                     <div class="col-md-12">
                                         <div class="mu-latest-course-single">
                                             <figure class="mu-latest-course-img">
-                                                <a href="#"><img src="../../Assets/assets/img/courses/1.jpg" alt="img"></a>
+                                                <a href="#">@Html.Sitecore().Field("Image", @Model)</a>
                                                 <figcaption class="mu-latest-course-imgcaption">
-                                                    <a href="#">Drawing</a>
-                                                    <span><i class="fa fa-clock-o"></i>90Days</span>
+                                                    <a href="#">@Model.Fields["Major"]</a>
+                                                    <span><i class="fa fa-clock-o"></i>@Model.Fields["TotalDate"]</span>
                                                 </figcaption>
                                             </figure>
                                             <div class="mu-latest-course-single-content">
-                                                <h2><a href="#">Lorem ipsum dolor sit amet.</a></h2>
+                                                <h2><a href="#">@Model.Fields["Title"]</a></h2>
                                                 <h4>Course Information</h4>
                                                 <ul>
                                                     <li> <span>Course Price</span> <span>$250</span></li>
-                                                    <li> <span>Place</span> <span>California,USA</span></li>
-                                                    <li> <span>Total Students</span> <span>800+</span></li>
-                                                    <li> <span>Course Duration</span> <span>4 Weeks</span></li>
+                                                    <li> <span>Place</span> <span>@Model.Fields["Place"]</span></li>
+                                                    <li> <span>Total Students</span> <span>@Model.Fields["TotalStudent"]</span></li>
+                                                    <li> <span>Course Duration</span> <span>@Model.Fields["Duration"]</span></li>
                                                     <li> <span>Course Start</span> <span>July 25, 2016</span></li>
                                                 </ul>
                                                 <h4>Description</h4>

@@ -19,14 +19,15 @@
                                                     <a href="#">@Html.Sitecore().Field("Image", item)</a>
                                                     <figcaption class="mu-latest-course-imgcaption">
                                                         <a href="#">@item.Fields["Major"]</a>
-                                                        <span><i class="fa fa-clock-o"></i>@item.Fields["TotalDate"]Days</span>
+                                                        <span><i class="fa fa-clock-o"></i>@item.Fields["TotalDate"]</span>
                                                     </figcaption>
                                                 </figure>
                                                 <div class="mu-latest-course-single-content">
                                                     <h4><a href="#">@item.Fields["Title"]</a></h4>
                                                     <p>@item.Fields["Description"]</p>
                                                     <div class="mu-latest-course-single-contbottom">
-                                                        <a class="mu-course-details" href="detail">Details</a>
+                                                        @*@Html.ActionLink("Details", "DetailCourse",  new { Name = item.Name }, new { @class = "mu-course-details" })*@
+                                                        <a class="mu-course-details" href="courses/@item.Name">Details</a>
                                                         <span class="mu-course-price" href="#">$@item.Fields["Price"]</span>
                                                     </div>
                                                 </div>
