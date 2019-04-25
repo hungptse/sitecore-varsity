@@ -18,9 +18,6 @@ namespace Sitecore.Feature.Course.API
                 return BadRequest();
             }
 
-
-
-
             return BadRequest();
         }
 

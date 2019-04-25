@@ -130,6 +130,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Start\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
