@@ -8,16 +8,21 @@ namespace Sitecore.Feature.Course.Controllers
 {
     public class CourseController : Controller
     {
+        public CourseController()
+        {
+
+        }
+
         public ActionResult ListCourse()
         {
             var courses = Context.Item.Axes.GetDescendants();
-            return View("~/Views/Components/Course.cshtml", courses);
+            return View("~/Views/Course/CourseListing.cshtml", courses);
         }
 
-        public ActionResult DetailCourse(string Name)
+        public ActionResult DetailCourse()
         {
             var courseExisted = Context.Item;
-            return View("~/Views/Components/CourseDetail.cshtml", courseExisted);
+            return View("~/Views/Course/CourseDetail.cshtml", courseExisted);
         }
     }
 }

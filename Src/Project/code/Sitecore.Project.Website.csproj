@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>code</RootNamespace>
-    <AssemblyName>code</AssemblyName>
+    <RootNamespace>Sitecore.Project.Website</RootNamespace>
+    <AssemblyName>Sitecore.Project.Website</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -75,20 +75,16 @@
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Sitecore.ContentSearch">
-      <HintPath>..\..\..\..\..\..\Sitecore.ContentSearch.dll</HintPath>
-    </Reference>
     <Reference Include="Sitecore.Kernel">
-      <HintPath>C:\Users\splasher\Desktop\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Mvc">
-      <HintPath>C:\Users\splasher\Desktop\Sitecore.Mvc.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Sitecore.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Mvc.Analytics">
-      <HintPath>C:\Users\splasher\Desktop\Sitecore.Mvc.Analytics.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Sitecore.Mvc.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
@@ -130,11 +126,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Project\Varsity.Website.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <None Include="Properties\PublishProfiles\Sitecore Local.pubxml" />
     <Content Include="Views\Website\Layouts\Default.cshtml" />
+    <Content Include="App_Config\Include\Project\Varsity.Website.config" />
+    <None Include="Properties\PublishProfiles\sc.local.pubxml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

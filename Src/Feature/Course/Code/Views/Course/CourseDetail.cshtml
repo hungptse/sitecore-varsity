@@ -16,16 +16,16 @@
                                                 <a href="#">@Html.Sitecore().Field("Image", @Model)</a>
                                                 <figcaption class="mu-latest-course-imgcaption">
                                                     <a href="#">@Model.Fields["Major"]</a>
-                                                    <span><i class="fa fa-clock-o"></i>@Model.Fields["TotalDate"]</span>
+                                                    <span><i class="fa fa-clock-o"></i>@Model.Fields["CountTime"]</span>
                                                 </figcaption>
                                             </figure>
                                             <div class="mu-latest-course-single-content">
-                                                <h2><a href="#">@Model.Fields["Title"]</a></h2>
+                                                <h2><a href="#">@Model.Fields["Header"]</a></h2>
                                                 <h4>Course Information</h4>
                                                 <ul>
                                                     <li> <span>Course Price</span> <span>$@Model.Fields["Price"]</span></li>
                                                     <li> <span>Place</span> <span>@Model.Fields["Place"]</span></li>
-                                                    <li> <span>Total Students</span> <span>@Model.Fields["TotalStudent"]</span></li>
+                                                    <li> <span>Total Students</span> <span>@Model.Fields["Total Student"]</span></li>
                                                     <li> <span>Course Duration</span> <span>@Model.Fields["Duration"]</span></li>
                                                     <li> <span>Course Start</span> <span>@Html.Sitecore().Field("Start", new { format = "MMM dd, yyyy" })</span></li>
                                                 </ul>

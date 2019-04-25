@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Landing", "Landing", "{25E0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Landing", "src\Feature\Landing\code\Sitecore.Feature.Landing.csproj", "{3437517F-9BB6-4CFE-AC6C-68DEBFFEF76E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Course", "src\Feature\Course\Sitecore.Feature.Course\Sitecore.Feature.Course.csproj", "{B07ED380-B5AB-4B45-AEAC-9735AC899C87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Course", "src\Feature\Course\code\Sitecore.Feature.Course.csproj", "{B07ED380-B5AB-4B45-AEAC-9735AC899C87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
