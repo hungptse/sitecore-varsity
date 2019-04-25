@@ -88,6 +88,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Landing\AboutUs.cshtml" />
+    <Content Include="Views\Landing\Blog.cshtml" />
+    <Content Include="Views\Landing\Contact.cshtml" />
+    <Content Include="Views\Landing\Counter.cshtml" />
+    <Content Include="Views\Landing\Feature.cshtml" />
+    <Content Include="Views\Landing\Footer.cshtml" />
+    <Content Include="Views\Landing\Header.cshtml" />
+    <Content Include="Views\Landing\LastestCourse.cshtml" />
+    <Content Include="Views\Landing\Services.cshtml" />
+    <Content Include="Views\Landing\Slider.cshtml" />
+    <Content Include="Views\Landing\Teacher.cshtml" />
+    <Content Include="Views\Landing\TrueStory.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -106,7 +118,6 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Landing\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
