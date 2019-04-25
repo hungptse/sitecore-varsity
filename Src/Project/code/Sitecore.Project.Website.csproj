@@ -78,6 +78,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Sitecore.ContentSearch">
+      <HintPath>..\..\..\..\..\..\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>C:\Users\splasher\Desktop\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -127,33 +130,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Global.asax" />
-    <Content Include="scripts\ai.0.22.9-build00167.js" />
-    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <None Include="Properties\PublishProfiles\Sitecore Local.pubxml" />
-    <Content Include="Views\Components\AboutUs.cshtml" />
-    <Content Include="Views\Components\Blog.cshtml" />
-    <Content Include="Views\Components\Counter.cshtml" />
-    <Content Include="Views\Components\Feature.cshtml" />
-    <Content Include="Views\Components\Footer.cshtml" />
-    <Content Include="Views\Components\Header.cshtml" />
-    <Content Include="Views\Components\LastestCourse.cshtml" />
-    <Content Include="Views\Components\Services.cshtml" />
-    <Content Include="Views\Components\Slider.cshtml" />
-    <Content Include="Views\Components\Teacher.cshtml" />
-    <Content Include="Views\Components\TrueStory.cshtml" />
-    <Content Include="Views\Components\Breadcrumb.cshtml" />
-    <Content Include="Views\Components\Contact.cshtml" />
-    <Content Include="Views\Components\Course.cshtml" />
-    <Content Include="Views\Components\CourseDetail.cshtml" />
+    <Content Include="Views\Website\Layouts\Default.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CourseController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -170,9 +151,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\Course\" />
+    <Folder Include="App_Config\Environment\Project\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
