@@ -7,20 +7,19 @@ using System.Web.Http;
 
 namespace Sitecore.Feature.Course.API
 {
-    [Route("api/course")]
     public class CourseAPIController : ApiController
     {
         [HttpGet]
-        public IHttpActionResult GetCourseByPage([FromUri] int page)
-        {
-            if (!ModelState.IsValid)
+        public IHttpActionResult GetCourseByPage([FromUri] int page, [FromBody] Dictionary<string,string> body)
+            {
+            if (page == 0 || body == null)
             {
                 return BadRequest();
             }
+            var ID = body.FirstOrDefault(item => item.Key == "ID");
 
-            return BadRequest();
+
+            return Ok("Page " + page + " ID: " + ID);
         }
-
-
     }
 }

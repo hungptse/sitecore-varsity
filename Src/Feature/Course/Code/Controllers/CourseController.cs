@@ -15,7 +15,7 @@ namespace Sitecore.Feature.Course.Controllers
 
         public ActionResult ListCourse()
         {
-            var courses = Context.Item.Axes.GetDescendants();
+            var courses = Context.Item;
             return View("~/Views/Course/CourseListing.cshtml", courses);
         }
 
