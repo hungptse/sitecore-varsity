@@ -111,12 +111,14 @@
     <Content Include="Views\Course\Breadcrumb.cshtml" />
     <Content Include="Views\Course\CourseListing.cshtml" />
     <Content Include="Views\Course\CourseDetail.cshtml" />
+    <Content Include="App_Config\Include\Feature\Feature.Course.config" />
     <None Include="Properties\PublishProfiles\sc.local.pubxml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\CourseAPIController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Pipelines\RegisterCourseAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -130,7 +132,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Start\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

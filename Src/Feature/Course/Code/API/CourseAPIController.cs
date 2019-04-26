@@ -7,7 +7,6 @@ using System.Web.Http;
 
 namespace Sitecore.Feature.Course.API
 {
-    [Route("api/course")]
     public class CourseAPIController : ApiController
     {
         [HttpGet]
@@ -18,9 +17,7 @@ namespace Sitecore.Feature.Course.API
                 return BadRequest();
             }
 
-            return BadRequest();
+            return Ok("Page " + page);
         }
-
-
     }
 }
