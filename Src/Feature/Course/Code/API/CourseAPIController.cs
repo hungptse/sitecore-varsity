@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,6 +10,7 @@ namespace Sitecore.Feature.Course.API
 {
     public class CourseAPIController : ApiController
     {
+        private const int ITEM_PER_PAGE = 2; 
         [HttpPost]
         public IHttpActionResult GetCourseByPage([FromUri] int page, [FromBody] Dictionary <string,string> body)
             {
@@ -18,8 +20,16 @@ namespace Sitecore.Feature.Course.API
             }
             var ID = body["ID"];
             var courses = Context.Database.GetItem(new Data.ID(ID));
-
-            return Ok("Page " + page + " ID: " + courses);
+            if (courses == null)
+            {
+                return BadRequest();
+            }
+            if (!courses.TemplateID.Equals(Templates.CourseFolder.ID))
+            {
+                return BadRequest();
+            }
+            var pageItems = courses.GetChildren().Skip(page * ITEM_PER_PAGE).Take(ITEM_PER_PAGE);
+            return Ok(pageItems);
         }
     }
 }

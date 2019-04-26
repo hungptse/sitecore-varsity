@@ -6,12 +6,12 @@ namespace Sitecore.Feature.Course
     {
         public struct CourseFolder
         {
-            public static readonly ID ID = new ID("{F5FF644E-385F-42BC-8E85-7EA4ED2EF915}");
+            public static readonly ID ID = new ID("{26BA7A68-A774-4F7D-A284-0F1CB82FC70F}");
         }
 
         public struct CourseItem
         {
-            public static readonly ID ID = new ID("{9858F98E-AF59-4FCC-9C47-A7B9EC78F3B6}");
+            public static readonly ID ID = new ID("{E9A00525-80F1-4FF1-B6E0-42687582566C}");
 
             public struct Fields
             {
