@@ -120,6 +120,7 @@
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Pipelines\RegisterCourseAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Views\web.config" />
