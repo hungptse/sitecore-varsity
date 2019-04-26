@@ -9,17 +9,17 @@ namespace Sitecore.Feature.Course.API
 {
     public class CourseAPIController : ApiController
     {
-        [HttpGet]
-        public IHttpActionResult GetCourseByPage([FromUri] int page, [FromBody] Dictionary<string,string> body)
+        [HttpPost]
+        public IHttpActionResult GetCourseByPage([FromUri] int page, [FromBody] Dictionary <string,string> body)
             {
             if (page == 0 || body == null)
             {
                 return BadRequest();
             }
-            var ID = body.FirstOrDefault(item => item.Key == "ID");
+            var ID = body["ID"];
+            var courses = Context.Database.GetItem(new Data.ID(ID));
 
-
-            return Ok("Page " + page + " ID: " + ID);
+            return Ok("Page " + page + " ID: " + courses);
         }
     }
 }
