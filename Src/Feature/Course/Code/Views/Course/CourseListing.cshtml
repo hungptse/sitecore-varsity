@@ -1,19 +1,21 @@
 ﻿@using Sitecore.Mvc
-@model Sitecore.Data.Items.Item[]
-
+@model Sitecore.Data.Items.Item
 <script>
     function nextToPage(page, ID) {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET",`api/course/CourseAPI/GetCourseByPage?page=${page}`);
+        xhr.open("POST", `api/course/CourseAPI/GetCourseByPage?page=${page}`);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.onreadystatechange = () => {
             if (xhr.readyState == 4 && xhr.status == 200) {
-                
+                //var divTag = document.createElement("div");
+                //divTag.innerHTML = xhr.responseText;
+                $("#data").html(JSON.parse(xhr.response).content);
+                //document.getElementById("data").appendChild(divTag);
             }
         };
-        xhr.send({
-            "ID" : ID
-        });
+        xhr.send(JSON.stringify({
+            "ID": ID
+        }));
     }
 </script>
 <section id="mu-course-content">
@@ -25,10 +27,9 @@
                         <div class="col-md-9">
                             <!-- start course content container -->
                             <div class="mu-course-container">
-                                <div class="row">
-                                    @foreach (var item in Model)
+                                <div class="row" id="data">
+                                    @foreach (var item in Model.Axes.GetDescendants())
                                     {
- 
                                         <div class="col-md-6 col-sm-6">
                                             <div class="mu-latest-course-single">
                                                 <figure class="mu-latest-course-img">
@@ -58,18 +59,22 @@
                                 <nav>
                                     <ul class="pagination">
                                         <li>
-                                            <a href="#" aria-label="Previous">
-                                                <span class="fa fa-angle-left"></span> Prev
+                                            <a href="javascript:nextToPage(1,'@Model.ID')" aria-label="First">
+                                                <span class="fa fa-angle-left"></span> First
                                             </a>
                                         </li>
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li>@*<a href="javascript:nextToPage(2,@Model)">2</a>*@</li>
+                                        @for (int i = 1; i <= Model.Children.Count; i++)
+                                        {
+                                            <li><a href="javascript:nextToPage(@(i),'@Model.ID')">@(i)</a></li>
+                                        }
+                                        @*<li class="active"><a href="javascript:nextToPage(1,'@Model.ID')">1</a></li>
+                                        <li><a href="javascript:nextToPage(2,'@Model.ID')">2</a></li>
                                         <li><a href="#">3</a></li>
                                         <li><a href="#">4</a></li>
-                                        <li><a href="#">5</a></li>
+                                        <li><a href="#">5</a></li>*@
                                         <li>
-                                            <a href="#" aria-label="Next">
-                                                Next <span class="fa fa-angle-right"></span>
+                                            <a href="javascript:nextToPage(@(Model.Children.Count),'@Model.ID')" aria-label="Last">
+                                                Last <span class="fa fa-angle-right"></span>
                                             </a>
                                         </li>
                                     </ul>

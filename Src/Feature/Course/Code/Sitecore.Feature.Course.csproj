@@ -113,6 +113,7 @@
     <Content Include="Views\Course\CourseDetail.cshtml" />
     <Content Include="App_Config\Include\Feature\Feature.Course.config" />
     <None Include="Properties\PublishProfiles\sc.local.pubxml" />
+    <Content Include="Views\Course\_CoursePartial.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

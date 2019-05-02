@@ -1,0 +1,25 @@
+﻿@using Sitecore.Mvc
+@model Sitecore.Data.Items.Item[]
+
+@foreach (var item in Model)
+{
+    <div class="col-md-6 col-sm-6">
+        <div class="mu-latest-course-single">
+            <figure class="mu-latest-course-img">
+                <a href="#">@Html.Sitecore().Field("Image", item)</a>
+                <figcaption class="mu-latest-course-imgcaption">
+                    <a href="#">@item.Fields["Major"]</a>
+                    <span><i class="fa fa-clock-o"></i>@item.Fields["CountTime"]</span>
+                </figcaption>
+            </figure>
+            <div class="mu-latest-course-single-content">
+                <h4><a href="#">@item.Fields["Header"]</a></h4>
+                <p>@item.Fields["Description"]</p>
+                <div class="mu-latest-course-single-contbottom">
+                    <a class="mu-course-details" href="course/@item.Name">Details</a>
+                    <span class="mu-course-price" href="#">$@item.Fields["Price"]</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}

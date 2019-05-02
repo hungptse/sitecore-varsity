@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.IO;
 using System.Web.Routing;
 
-namespace Blade.Razor
+namespace Sitecore.Feature.Course.Helpers
 {
 	/// <summary>
 	/// Class that renders MVC views to a string using the
@@ -18,7 +18,7 @@ namespace Blade.Razor
 	/// http://www.west-wind.com/weblog/posts/2013/Jul/15/Rendering-ASPNET-MVC-Razor-Views-outside-of-MVC-revisited
 	/// http://www.west-wind.com/weblog/posts/2012/May/30/Rendering-ASPNET-MVC-Views-to-String
 	/// </remarks>
-	internal class ViewRenderer
+	public class ViewRenderer
 	{
 		/// <summary>
 		/// Required Controller Context
