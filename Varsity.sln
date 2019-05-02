@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Landing", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Course", "src\Feature\Course\code\Sitecore.Feature.Course.csproj", "{B07ED380-B5AB-4B45-AEAC-9735AC899C87}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extenstion", "Extenstion", "{A0613607-AA95-4E9D-ADEC-681903977A08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Extenstion", "src\Foundation\Extenstion\code\Sitecore.Foundation.Extenstion.csproj", "{BA3422CC-03E4-4B3E-8A68-0BE558EE2D8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,10 @@ Global
 		{B07ED380-B5AB-4B45-AEAC-9735AC899C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B07ED380-B5AB-4B45-AEAC-9735AC899C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B07ED380-B5AB-4B45-AEAC-9735AC899C87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA3422CC-03E4-4B3E-8A68-0BE558EE2D8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA3422CC-03E4-4B3E-8A68-0BE558EE2D8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA3422CC-03E4-4B3E-8A68-0BE558EE2D8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA3422CC-03E4-4B3E-8A68-0BE558EE2D8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +57,8 @@ Global
 		{25E06260-28A2-4173-AEEA-8D070A0AE2C5} = {C902FA7F-762A-47F9-A0B3-875D26F3FE89}
 		{3437517F-9BB6-4CFE-AC6C-68DEBFFEF76E} = {25E06260-28A2-4173-AEEA-8D070A0AE2C5}
 		{B07ED380-B5AB-4B45-AEAC-9735AC899C87} = {972ADFFB-7054-4740-8286-DBF5608A8B39}
+		{A0613607-AA95-4E9D-ADEC-681903977A08} = {657EFDB2-31D9-42E5-B778-6CEAC1CEB398}
+		{BA3422CC-03E4-4B3E-8A68-0BE558EE2D8A} = {A0613607-AA95-4E9D-ADEC-681903977A08}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {87D1FA9A-E835-482E-8CE0-FA32792ADA99}
