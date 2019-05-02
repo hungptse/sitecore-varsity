@@ -1,24 +1,27 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
-
 namespace Sitecore.Feature.Course.API
 {
     public class CourseAPIController : ApiController
     {
-        private const int ITEM_PER_PAGE = 2; 
-        [HttpPost]
-        public IHttpActionResult GetCourseByPage([FromUri] int page, [FromBody] Dictionary <string,string> body)
-            {
+        private const int ITEM_PER_PAGE = 1;
+        [System.Web.Http.HttpPost]
+        public dynamic GetCourseByPage([FromUri] int page, [FromBody] Dictionary<string, string> body)
+        {
             if (page == 0 || body == null)
             {
                 return BadRequest();
             }
             var ID = body["ID"];
+            try
+            {
+                var checkID = Context.Database.GetItem(new Data.ID(ID));
+            }
+            catch (System.Exception)
+            {
+
+                return BadRequest();
+            }
             var courses = Context.Database.GetItem(new Data.ID(ID));
             if (courses == null)
             {
@@ -28,8 +31,11 @@ namespace Sitecore.Feature.Course.API
             {
                 return BadRequest();
             }
-            var pageItems = courses.GetChildren().Skip(page * ITEM_PER_PAGE).Take(ITEM_PER_PAGE);
-            return Ok(pageItems);
+            ViewRenderer
+            var result = ViewRender.RenderModel("/Views/Course/_CoursePartial.cshtml", courseItems);
+
+
+            return json;
         }
     }
 }
