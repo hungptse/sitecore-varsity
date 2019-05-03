@@ -1,4 +1,5 @@
 ﻿@model Sitecore.Data.Items.Item
+@using Sitecore.Feature.Course
 @using Sitecore.Mvc
 <section id="mu-course-content">
     <div class="container">
@@ -13,24 +14,24 @@
                                     <div class="col-md-12">
                                         <div class="mu-latest-course-single">
                                             <figure class="mu-latest-course-img">
-                                                <a href="#">@Html.Sitecore().Field("Image", @Model)</a>
+                                                <a href="#">@Html.Sitecore().Field(Templates.CourseItem.Fields.Image.ToString(), @Model)</a>
                                                 <figcaption class="mu-latest-course-imgcaption">
-                                                    <a href="#">@Model.Fields["Major"]</a>
-                                                    <span><i class="fa fa-clock-o"></i>@Model.Fields["CountTime"]</span>
+                                                    <a href="#">@Model.Fields[Templates.CourseItem.Fields.Major]</a>
+                                                    <span><i class="fa fa-clock-o"></i>@Model.Fields[Templates.CourseItem.Fields.CountTime]</span>
                                                 </figcaption>
                                             </figure>
                                             <div class="mu-latest-course-single-content">
-                                                <h2><a href="#">@Model.Fields["Header"]</a></h2>
+                                                <h2><a href="#">@Model.Fields[Templates.CourseItem.Fields.Header]</a></h2>
                                                 <h4>Course Information</h4>
                                                 <ul>
-                                                    <li> <span>Course Price</span> <span>$@Model.Fields["Price"]</span></li>
-                                                    <li> <span>Place</span> <span>@Model.Fields["Place"]</span></li>
-                                                    <li> <span>Total Students</span> <span>@Model.Fields["TotalStudent"]</span></li>
-                                                    <li> <span>Course Duration</span> <span>@Model.Fields["Duration"]</span></li>
-                                                    <li> <span>Course Start</span> <span>@Html.Sitecore().Field("Start", new { format = "MMM dd, yyyy" })</span></li>
+                                                    <li> <span>Course Price</span> <span>$@Model.Fields[Templates.CourseItem.Fields.Price]</span></li>
+                                                    <li> <span>Place</span> <span>@Model.Fields[Templates.CourseItem.Fields.Place]</span></li>
+                                                    <li> <span>Total Students</span> <span>@Model.Fields[Templates.CourseItem.Fields.TotalStudent]</span></li>
+                                                    <li> <span>Course Duration</span> <span>@Model.Fields[Templates.CourseItem.Fields.Duration]</span></li>
+                                                    <li> <span>Course Start</span> <span>@Html.Sitecore().Field(Templates.CourseItem.Fields.Start.ToString(), new { format = "MMM dd, yyyy" })</span></li>
                                                 </ul>
                                                 <h4>Description</h4>
-                                                @Model.Fields["Description"]
+                                                @Model.Fields[Templates.CourseItem.Fields.Description]
                                                 @*<h4>Course Outline</h4>
                                                 <div class="table-responsive">
                                                     <table class="table">

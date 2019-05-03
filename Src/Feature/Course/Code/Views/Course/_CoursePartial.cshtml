@@ -6,7 +6,7 @@
 <div class="col-md-6 col-sm-6">
     <div class="mu-latest-course-single">
         <figure class="mu-latest-course-img">
-            <a href="#">@Html.Sitecore().Field("Image", item)</a>
+            <a href="#">@Html.Sitecore().Field(Templates.CourseItem.Fields.Image.ToString(), item)</a>
             <figcaption class="mu-latest-course-imgcaption">
                 <a href="#">@item.Fields[Templates.CourseItem.Fields.Major]</a>
                 <span><i class="fa fa-clock-o"></i>@item.Fields[Templates.CourseItem.Fields.CountTime]</span>
