@@ -2,14 +2,13 @@
 using Sitecore.Feature.Course.Helpers;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Web.Http;
 namespace Sitecore.Feature.Course.API
 {
     public class CourseAPIController : ApiController
     {
         private const int ITEM_PER_PAGE = 1;
-        [System.Web.Http.HttpPost]
+        [HttpPost]
         public IHttpActionResult GetCourseByPage([FromUri] int page, [FromBody] Dictionary<string, string> body)
         {
             if (page == 0 || body == null)
