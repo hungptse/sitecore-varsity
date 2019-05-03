@@ -36,7 +36,6 @@ namespace Sitecore.Feature.Course.API
             }
             var paging = new List<Item>(courses.Axes.GetDescendants()).Skip((page - 1) * ITEM_PER_PAGE).Take(ITEM_PER_PAGE);
             var result = new ViewRenderer().RenderPartialViewToString("~/Views/Course/_CoursePartial.cshtml", paging.ToArray());
-            //var result = ViewRender.RenderModel("/Views/Course/_CoursePartial.cshtml", courseItems);
             return Ok(new { content = result });
         }
     }

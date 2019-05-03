@@ -7,10 +7,23 @@
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.onreadystatechange = () => {
             if (xhr.readyState == 4 && xhr.status == 200) {
-                //var divTag = document.createElement("div");
-                //divTag.innerHTML = xhr.responseText;
+                //Render html to view
                 $("#data").html(JSON.parse(xhr.response).content);
-                //document.getElementById("data").appendChild(divTag);
+                //Paging animation
+                var list = document.getElementsByClassName("page-list");
+                for (var i = 0; i < list.length; i++) {
+                    var item = list.item(i);
+                    item.className = "page-list";
+                }
+                for (var i = 0; i < list.length; i++) {
+                    var item = list.item(i);
+                    if ((i + 1) === page) {
+                        item.classList.add("active");
+                    }
+                }
+                //Change url 
+                var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?page=' + page;
+                window.history.pushState({ path: newurl }, '', newurl);
             }
         };
         xhr.send(JSON.stringify({
@@ -65,7 +78,7 @@
                                         </li>
                                         @for (int i = 1; i <= Model.Children.Count; i++)
                                         {
-                                            <li><a href="javascript:nextToPage(@(i),'@Model.ID')">@(i)</a></li>
+                                            <li class="page-list"><a href="javascript:nextToPage(@(i),'@Model.ID')">@(i)</a></li>
                                         }
                                         @*<li class="active"><a href="javascript:nextToPage(1,'@Model.ID')">1</a></li>
                                         <li><a href="javascript:nextToPage(2,'@Model.ID')">2</a></li>
