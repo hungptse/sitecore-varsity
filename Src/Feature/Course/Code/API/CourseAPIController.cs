@@ -1,5 +1,6 @@
 ﻿using Sitecore.Data.Items;
 using Sitecore.Feature.Course.Helpers;
+using Sitecore.Feature.Course.Services;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -7,7 +8,6 @@ namespace Sitecore.Feature.Course.API
 {
     public class CourseAPIController : ApiController
     {
-        private const int ITEM_PER_PAGE = 1;
         [HttpPost]
         public IHttpActionResult GetCourseByPage([FromUri] int page, [FromBody] Dictionary<string, string> body)
         {
@@ -34,8 +34,8 @@ namespace Sitecore.Feature.Course.API
             {
                 return BadRequest();
             }
-            var paging = new List<Item>(courses.Axes.GetDescendants()).Skip((page - 1) * ITEM_PER_PAGE).Take(ITEM_PER_PAGE);
-            var result = new ViewRenderer().RenderPartialViewToString("~/Views/Course/_CoursePartial.cshtml", paging.ToArray());
+            int size = int.Parse(body["size"]);
+            var result = new ViewRenderer().RenderPartialViewToString("~/Views/Course/_CoursePartial.cshtml", CourseListingServices.getInstance().GetItemsByPage(page,courses,size).Courses);
             return Ok(new { content = result });
         }
     }

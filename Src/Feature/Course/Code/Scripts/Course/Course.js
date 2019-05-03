@@ -1,4 +1,4 @@
-﻿function nextToPage(page, ID) {
+﻿function nextToPage(page, ID, size) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", `api/course/CourseAPI/GetCourseByPage?page=${page}`);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -14,7 +14,8 @@
         }
     };
     xhr.send(JSON.stringify({
-        "ID": ID
+        "ID": ID,
+        "size": size
     }));
 }
 function pagingAnimation(page) {

@@ -1,0 +1,26 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Feature.Course
+@model Sitecore.Data.Items.Item[]
+<!-- start single sidebar -->
+<div class="mu-single-sidebar">
+    <h3>Popular Course</h3>
+    <div class="mu-sidebar-popular-courses">
+        @foreach (var item in Model)
+        {
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        @Html.Sitecore().Field(Templates.CourseItem.Fields.Image.ToString(), item, new { @class = "media-object" })
+                        @*<img class="media-object" src="../../Assets/assets/img/courses/1.jpg" alt="img">*@
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading"><a href="#">@item.Fields[Templates.CourseItem.Fields.Header]</a></h4>
+                    <span class="popular-course-price">$@item.Fields[Templates.CourseItem.Fields.Price]</span>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+<!-- end single sidebar -->

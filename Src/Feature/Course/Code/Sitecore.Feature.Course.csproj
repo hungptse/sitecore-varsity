@@ -115,13 +115,16 @@
     <Content Include="App_Config\Include\Feature\Feature.Course.config" />
     <None Include="Properties\PublishProfiles\sc.local.pubxml" />
     <Content Include="Views\Course\_CoursePartial.cshtml" />
+    <Content Include="Views\Course\_PopularCourse.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\CourseAPIController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Models\CourseListingModel.cs" />
     <Compile Include="Pipelines\RegisterCourseAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CourseListingServices.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -134,9 +137,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\..\Foundation\Extenstion\code\Sitecore.Foundation.Extenstion.csproj">
       <Project>{ba3422cc-03e4-4b3e-8a68-0be558ee2d8a}</Project>
