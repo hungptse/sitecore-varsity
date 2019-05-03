@@ -27,10 +27,10 @@ namespace Sitecore.Feature.Course.Controllers
             return View("~/Views/Course/CourseDetail.cshtml", courseExisted);
         }
 
-        public ActionResult PopularlCourse()
+        public ActionResult PopularCourse()
         {
-            var courseExisted = Context.Item.Axes.GetDescendants().OrderByDescending(item => item.Fields[Templates.CourseItem.Fields.Price]);
-            return View("~/Views/Course/CourseListing.cshtml", courseExisted);
+            var courseTopPrice = Context.Item.Axes.GetDescendants().Take(3).ToArray();
+            return View("~/Views/Course/_PopularCourse.cshtml", courseTopPrice);
         }
     }
 }
