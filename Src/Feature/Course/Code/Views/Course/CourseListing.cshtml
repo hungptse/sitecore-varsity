@@ -160,7 +160,7 @@
 <script src="~/Scripts/Course/Course.js"></script>
 <script>
     var pageParam = new URL(window.location.href).searchParams.get("page");
-    if (pageParam == null || pageParam > @Model.Children.Count || typeof (pageParam) != "number") {
+    if (pageParam == null || (parseInt(pageParam) > parseInt(@Model.Children.Count))) {
       pageParam = 1;
     }
     nextToPage(pageParam, "@Model.ID");
