@@ -27,5 +27,13 @@ namespace Sitecore.Feature.Course
                 public static readonly ID Start = new ID("{B51B77C8-0CDD-46E4-8F85-92A6177A3EEE}");
             }
         }
+        //public struct Parameters 
+        //{
+        //    public static readonly ID ID = new ID("{9B7419B0-4218-4D7A-843B-4BDAE32EC722}");
+        //    public struct Fields
+        //    {
+        //        public static readonly ID ITEM_PER_PAGE = new ID("{BEEFA759-0A2D-40F1-A4E4-202E7E4C4026}");
+        //    }
+        //}
     }
 }

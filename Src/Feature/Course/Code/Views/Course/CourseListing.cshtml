@@ -42,13 +42,13 @@
                                 <nav>
                                     <ul class="pagination">
                                         <li>
-                                            <a href="javascript:nextToPage(1,'@Model.CourseId')" aria-label="First">
+                                            <a href="javascript:nextToPage(1,'@Model.CourseId',@Model.ItemsCount)" aria-label="First">
                                                 <span class="fa fa-angle-left"></span> First
                                             </a>
                                         </li>
-                                        @for (int i = 1; i <= Model.CoursesSize; i++)
+                                        @for (int i = 1; i <= Model.PageMax ; i++)
                                         {
-                                            <li class="page-list"><a href="javascript:nextToPage(@(i),'@Model.CourseId')">@(i)</a></li>
+                                            <li class="page-list"><a href="javascript:nextToPage(@(i),'@Model.CourseId',@Model.ItemsCount)">@(i)</a></li>
                                         }
                                         @*<li class="active"><a href="javascript:nextToPage(1,'@Model.ID')">1</a></li>
                                             <li><a href="javascript:nextToPage(2,'@Model.ID')">2</a></li>
@@ -56,7 +56,7 @@
                                             <li><a href="#">4</a></li>
                                             <li><a href="#">5</a></li>*@
                                         <li>
-                                            <a href="javascript:nextToPage(@(Model.CoursesSize),'@Model.CourseId')" aria-label="Last">
+                                            <a href="javascript:nextToPage(@(Model.PageMax),'@Model.CourseId',@Model.ItemsCount)" aria-label="Last">
                                                 Last <span class="fa fa-angle-right"></span>
                                             </a>
                                         </li>
@@ -85,7 +85,8 @@
                                 <div class="mu-single-sidebar">
                                     <h3>Popular Course</h3>
                                     <div class="mu-sidebar-popular-courses">
-                                        <div class="media">
+                                        @Html.Sitecore().Placeholder("popular-course")
+                                        @*<div class="media">
                                             <div class="media-left">
                                                 <a href="#">
                                                     <img class="media-object" src="../../Assets/assets/img/courses/1.jpg" alt="img">
@@ -117,7 +118,7 @@
                                                 <h4 class="media-heading"><a href="#">Health & Sports</a></h4>
                                                 <span class="popular-course-price">$90.00</span>
                                             </div>
-                                        </div>
+                                        </div>*@
                                     </div>
                                 </div>
                                 <!-- end single sidebar -->
@@ -164,5 +165,5 @@
     if (pageParam == null || (parseInt(pageParam) > parseInt(@Model.CoursesSize))) {
       pageParam = 1;
     }
-    nextToPage(pageParam, "@Model.CourseId");
+    nextToPage(pageParam, "@Model.CourseId",@Model.ItemsCount);
 </script>

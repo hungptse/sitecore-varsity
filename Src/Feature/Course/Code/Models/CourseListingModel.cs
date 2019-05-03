@@ -11,5 +11,7 @@ namespace Sitecore.Feature.Course.Models
         public Item[] Courses { get; set; }
         public string CourseId { get; set; }
         public int CoursesSize { get; set; }
+        public int PageMax { get; set; }
+        public int ItemsCount { get; set; }
     }
 }

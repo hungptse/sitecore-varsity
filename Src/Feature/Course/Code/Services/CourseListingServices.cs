@@ -1,8 +1,11 @@
 ﻿using Sitecore.Data.Items;
+using Sitecore.Mvc.Presentation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Sitecore.Foundation.Extenstion.Helpers;
+using Sitecore.Feature.Course.Models;
 
 namespace Sitecore.Feature.Course.Services
 {
@@ -17,11 +20,20 @@ namespace Sitecore.Feature.Course.Services
             }
             return services;
         }
-        public Item[] GetItemsByPage(int page, Item parent)
+        public CourseListingModel GetItemsByPage(int page, Item courses, int ItemsCount = 0)
         {
-            var ITEM_PER_PAGE = 1;
-            var paging = new List<Item>(parent.Axes.GetDescendants()).Skip((page - 1) * ITEM_PER_PAGE).Take(ITEM_PER_PAGE);
-            return paging.ToArray();
+            var ITEM_PER_PAGE = ItemsCount;
+            if (RenderingContext.CurrentOrNull != null)
+            {
+                ITEM_PER_PAGE = RenderingContext.Current.Rendering.GetIntegerParameter("ITEM_PER_PAGE", 3);
+            }
+            CourseListingModel model = new CourseListingModel();
+            model.Courses = new List<Item>(courses.Axes.GetDescendants()).Skip((page - 1) * ITEM_PER_PAGE).Take(ITEM_PER_PAGE).ToArray();
+            model.CoursesSize = courses.GetChildren().Count;
+            model.PageMax = (model.CoursesSize + ITEM_PER_PAGE - 1) / ITEM_PER_PAGE;
+            model.CourseId = courses.ID.ToString();
+            model.ItemsCount = ITEM_PER_PAGE;
+            return model;
         }
     }
 }

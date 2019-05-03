@@ -17,10 +17,7 @@ namespace Sitecore.Feature.Course.Controllers
 
         public ActionResult ListCourse()
         {
-            CourseListingModel model = new CourseListingModel();
-            model.CourseId = Context.Item.ID.ToString();
-            model.Courses = CourseListingServices.getInstance().GetItemsByPage(1, Context.Item);
-            model.CoursesSize = Context.Item.GetChildren().Count;
+            CourseListingModel model = CourseListingServices.getInstance().GetItemsByPage(1, Context.Item);
             return View("~/Views/Course/CourseListing.cshtml", model);
         }
 
@@ -28,6 +25,12 @@ namespace Sitecore.Feature.Course.Controllers
         {
             var courseExisted = Context.Item;
             return View("~/Views/Course/CourseDetail.cshtml", courseExisted);
+        }
+
+        public ActionResult PopularlCourse()
+        {
+            var courseExisted = Context.Item.Axes.GetDescendants().OrderByDescending(item => item.Fields[Templates.CourseItem.Fields.Price]);
+            return View("~/Views/Course/CourseListing.cshtml", courseExisted);
         }
     }
 }

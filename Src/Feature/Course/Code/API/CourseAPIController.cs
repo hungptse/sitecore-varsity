@@ -8,7 +8,6 @@ namespace Sitecore.Feature.Course.API
 {
     public class CourseAPIController : ApiController
     {
-        private const int ITEM_PER_PAGE = 1;
         [HttpPost]
         public IHttpActionResult GetCourseByPage([FromUri] int page, [FromBody] Dictionary<string, string> body)
         {
@@ -35,7 +34,8 @@ namespace Sitecore.Feature.Course.API
             {
                 return BadRequest();
             }
-            var result = new ViewRenderer().RenderPartialViewToString("~/Views/Course/_CoursePartial.cshtml", CourseListingServices.getInstance().GetItemsByPage(page,courses));
+            int size = int.Parse(body["size"]);
+            var result = new ViewRenderer().RenderPartialViewToString("~/Views/Course/_CoursePartial.cshtml", CourseListingServices.getInstance().GetItemsByPage(page,courses,size).Courses);
             return Ok(new { content = result });
         }
     }
