@@ -1,5 +1,6 @@
 ﻿@using Sitecore.Mvc
-@model Sitecore.Data.Items.Item
+@using Sitecore.Feature.Course
+@model Sitecore.Feature.Course.Models.CourseListingModel
 <section id="mu-course-content">
     <div class="container">
         <div class="row">
@@ -11,28 +12,28 @@
                             <div class="mu-course-container">
 
                                 <div class="row" id="data">
-                                    @*@foreach (var item in Model.Axes.GetDescendants())
+                                    @foreach (var item in Model.Courses)
                                         {
                                             <div class="col-md-6 col-sm-6">
                                                 <div class="mu-latest-course-single">
                                                     <figure class="mu-latest-course-img">
                                                         <a href="#">@Html.Sitecore().Field("Image", item)</a>
                                                         <figcaption class="mu-latest-course-imgcaption">
-                                                            <a href="#">@item.Fields["Major"]</a>
-                                                            <span><i class="fa fa-clock-o"></i>@item.Fields["CountTime"]</span>
+                                                            <a href="#">@item.Fields[Templates.CourseItem.Fields.Major]</a>
+                                                            <span><i class="fa fa-clock-o"></i>@item.Fields[Templates.CourseItem.Fields.CountTime]</span>
                                                         </figcaption>
                                                     </figure>
                                                     <div class="mu-latest-course-single-content">
-                                                        <h4><a href="#">@item.Fields["Header"]</a></h4>
-                                                        <p>@item.Fields["Description"]</p>
+                                                        <h4><a href="#">@item.Fields[Templates.CourseItem.Fields.Header]</a></h4>
+                                                        <p>@item.Fields[Templates.CourseItem.Fields.Description]</p>
                                                         <div class="mu-latest-course-single-contbottom">
                                                             <a class="mu-course-details" href="course/@item.Name">Details</a>
-                                                            <span class="mu-course-price" href="#">$@item.Fields["Price"]</span>
+                                                            <span class="mu-course-price" href="#">$@item.Fields[Templates.CourseItem.Fields.Pr]</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        }*@
+                                        }
                                 </div>
                             </div>
                             <!-- end course content container -->
@@ -41,13 +42,13 @@
                                 <nav>
                                     <ul class="pagination">
                                         <li>
-                                            <a href="javascript:nextToPage(1,'@Model.ID')" aria-label="First">
+                                            <a href="javascript:nextToPage(1,'@Model.CourseId')" aria-label="First">
                                                 <span class="fa fa-angle-left"></span> First
                                             </a>
                                         </li>
-                                        @for (int i = 1; i <= Model.Children.Count; i++)
+                                        @for (int i = 1; i <= Model.CoursesSize; i++)
                                         {
-                                            <li class="page-list"><a href="javascript:nextToPage(@(i),'@Model.ID')">@(i)</a></li>
+                                            <li class="page-list"><a href="javascript:nextToPage(@(i),'@Model.CourseId')">@(i)</a></li>
                                         }
                                         @*<li class="active"><a href="javascript:nextToPage(1,'@Model.ID')">1</a></li>
                                             <li><a href="javascript:nextToPage(2,'@Model.ID')">2</a></li>
@@ -55,7 +56,7 @@
                                             <li><a href="#">4</a></li>
                                             <li><a href="#">5</a></li>*@
                                         <li>
-                                            <a href="javascript:nextToPage(@(Model.Children.Count),'@Model.ID')" aria-label="Last">
+                                            <a href="javascript:nextToPage(@(Model.CoursesSize),'@Model.CourseId')" aria-label="Last">
                                                 Last <span class="fa fa-angle-right"></span>
                                             </a>
                                         </li>
@@ -160,8 +161,8 @@
 <script src="~/Scripts/Course/Course.js"></script>
 <script>
     var pageParam = new URL(window.location.href).searchParams.get("page");
-    if (pageParam == null || (parseInt(pageParam) > parseInt(@Model.Children.Count))) {
+    if (pageParam == null || (parseInt(pageParam) > parseInt(@Model.CoursesSize))) {
       pageParam = 1;
     }
-    nextToPage(pageParam, "@Model.ID");
+    nextToPage(pageParam, "@Model.CourseId");
 </script>

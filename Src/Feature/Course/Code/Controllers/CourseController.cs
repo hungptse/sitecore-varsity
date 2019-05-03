@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sitecore.Feature.Course.Models;
+using Sitecore.Feature.Course.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,8 +17,11 @@ namespace Sitecore.Feature.Course.Controllers
 
         public ActionResult ListCourse()
         {
-            var courses = Context.Item;
-            return View("~/Views/Course/CourseListing.cshtml", courses);
+            CourseListingModel model = new CourseListingModel();
+            model.CourseId = Context.Item.ID.ToString();
+            model.Courses = CourseListingServices.getInstance().GetItemsByPage(1, Context.Item);
+            model.CoursesSize = Context.Item.GetChildren().Count;
+            return View("~/Views/Course/CourseListing.cshtml", model);
         }
 
         public ActionResult DetailCourse()
