@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\Course\Course.js" />
     <Content Include="Views\Course\Breadcrumb.cshtml" />
     <Content Include="Views\Course\CourseListing.cshtml" />
     <Content Include="Views\Course\CourseDetail.cshtml" />
