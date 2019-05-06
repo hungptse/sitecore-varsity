@@ -26,7 +26,7 @@ namespace Sitecore.Feature.Course
                 public static readonly ID Duration = new ID("{28744DB3-D455-4E6B-8B37-DF3B97F92C85}");
                 public static readonly ID Start = new ID("{B51B77C8-0CDD-46E4-8F85-92A6177A3EEE}");
             }
-        }
+        }  
         //public struct Parameters 
         //{
         //    public static readonly ID ID = new ID("{9B7419B0-4218-4D7A-843B-4BDAE32EC722}");
