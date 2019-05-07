@@ -53,10 +53,10 @@
       <HintPath>..\..\..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\..\..\..\..\..\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\..\..\..\scdll\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Mvc">
-      <HintPath>..\..\..\..\..\..\..\Sitecore.Mvc.dll</HintPath>
+      <HintPath>..\..\..\..\..\scdll\Sitecore.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
