@@ -29,12 +29,12 @@ namespace Sitecore.Feature.Course.Controllers
         
         public ActionResult PopularCourse()
         {
-            var courseTopPrice = Context.Item.Axes.GetDescendants().OrderByDescending(item => int.Parse(item[Templates.CourseItem.Fields.Price])).Take(3).ToArray();
+            var courseTopPrice = Context.Item.Parent.Axes.GetDescendants().OrderByDescending(item => int.Parse(item[Templates.CourseItem.Fields.Price])).Take(3).ToArray();
             return View("~/Views/Course/_PopularCourse.cshtml", courseTopPrice);
         }
         public ActionResult TagMajor()
         {
-            var listMajor = Context.Item.Axes.GetDescendants().Select(item => item[Templates.CourseItem.Fields.Major]).ToArray();
+            var listMajor = Context.Item.Parent.Axes.GetDescendants().Select(item => item[Templates.CourseItem.Fields.Major]).ToArray();
             return View("~/Views/Course/_TagMajor.cshtml", listMajor);
         }
     }
