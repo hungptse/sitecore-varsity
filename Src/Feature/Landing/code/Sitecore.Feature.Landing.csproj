@@ -105,6 +105,7 @@
     <Content Include="Views\Landing\Teacher.cshtml" />
     <Content Include="Views\Landing\TrueStory.cshtml" />
     <None Include="Properties\PublishProfiles\sc9.sc.pubxml" />
+    <Content Include="Views\Landing\NotFound.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
