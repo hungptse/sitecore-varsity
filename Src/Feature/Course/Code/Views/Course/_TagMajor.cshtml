@@ -1,0 +1,15 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Feature.Course
+@model string[]
+
+<!-- start single sidebar -->
+<div class="mu-single-sidebar">
+    <h3>Tags Major</h3>
+    <div class="tag-cloud">
+        @foreach (var major in Model)
+        {
+            <a href="#">@major</a>
+        }
+    </div>
+</div>
+<!-- end single sidebar -->

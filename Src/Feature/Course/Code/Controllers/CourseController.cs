@@ -26,11 +26,16 @@ namespace Sitecore.Feature.Course.Controllers
             var courseExisted = Context.Item;
             return View("~/Views/Course/CourseDetail.cshtml", courseExisted);
         }
-
+        
         public ActionResult PopularCourse()
         {
-            var courseTopPrice = Context.Item.Axes.GetDescendants().Take(3).ToArray();
+            var courseTopPrice = Context.Item.Parent.Axes.GetDescendants().OrderByDescending(item => int.Parse(item[Templates.CourseItem.Fields.Price])).Take(3).ToArray();
             return View("~/Views/Course/_PopularCourse.cshtml", courseTopPrice);
+        }
+        public ActionResult TagMajor()
+        {
+            var listMajor = Context.Item.Parent.Axes.GetDescendants().Select(item => item[Templates.CourseItem.Fields.Major]).ToArray();
+            return View("~/Views/Course/_TagMajor.cshtml", listMajor);
         }
     }
 }

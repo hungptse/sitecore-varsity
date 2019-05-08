@@ -33,56 +33,56 @@
                                                 <h4>Description</h4>
                                                 @Model.Fields[Templates.CourseItem.Fields.Description]
                                                 @*<h4>Course Outline</h4>
-                                                <div class="table-responsive">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th> Title </th>
-                                                                <th> Course Time </th>
-                                                                <th> Spent Time </th>
-                                                                <th> Status </th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td> 1. Topic 1 </td>
-                                                                <td> 15:30 </td>
-                                                                <td> 13:80 </td>
-                                                                <td> Successful </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td> 2. Topic 2 </td>
-                                                                <td> 15:30 </td>
-                                                                <td> 13:80 </td>
-                                                                <td> Successful </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td> 3. Topic 3 </td>
-                                                                <td> 15:30 </td>
-                                                                <td> - </td>
-                                                                <td> Successful </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td> 4. Topic 4 </td>
-                                                                <td> 15:30 </td>
-                                                                <td> 13:80 </td>
-                                                                <td> Successful </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td> 5. Topic 5 </td>
-                                                                <td> 15:30 </td>
-                                                                <td> - </td>
-                                                                <td> Waiting </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td> 6. Topic 6 </td>
-                                                                <td> 15:30 </td>
-                                                                <td> 13:80 </td>
-                                                                <td> - </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>*@
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th> Title </th>
+                                                                    <th> Course Time </th>
+                                                                    <th> Spent Time </th>
+                                                                    <th> Status </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td> 1. Topic 1 </td>
+                                                                    <td> 15:30 </td>
+                                                                    <td> 13:80 </td>
+                                                                    <td> Successful </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td> 2. Topic 2 </td>
+                                                                    <td> 15:30 </td>
+                                                                    <td> 13:80 </td>
+                                                                    <td> Successful </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td> 3. Topic 3 </td>
+                                                                    <td> 15:30 </td>
+                                                                    <td> - </td>
+                                                                    <td> Successful </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td> 4. Topic 4 </td>
+                                                                    <td> 15:30 </td>
+                                                                    <td> 13:80 </td>
+                                                                    <td> Successful </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td> 5. Topic 5 </td>
+                                                                    <td> 15:30 </td>
+                                                                    <td> - </td>
+                                                                    <td> Waiting </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td> 6. Topic 6 </td>
+                                                                    <td> 15:30 </td>
+                                                                    <td> 13:80 </td>
+                                                                    <td> - </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>*@
                                             </div>
                                         </div>
                                     </div>
@@ -182,8 +182,9 @@
                         <div class="col-md-3">
                             <!-- start sidebar -->
                             <aside class="mu-sidebar">
+                                @Html.Sitecore().Placeholder("sidebar")
                                 <!-- start single sidebar -->
-                                <div class="mu-single-sidebar">
+                                @*<div class="mu-single-sidebar">
                                     <h3>Categories</h3>
                                     <ul class="mu-sidebar-catg">
                                         <li><a href="#">Web Design</a></li>
@@ -193,50 +194,10 @@
                                         <li><a href="">Camestry</a></li>
                                         <li><a href="">English</a></li>
                                     </ul>
-                                </div>
-                                <!-- end single sidebar -->
+                                </div>*@
+                                @*@Html.Sitecore().Placeholder("popular-course")*@
                                 <!-- start single sidebar -->
-                                <div class="mu-single-sidebar">
-                                    <h3>Popular Course</h3>
-                                    <div class="mu-sidebar-popular-courses">
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <a href="#">
-                                                    <img class="media-object" src="../../Assets/assets/img/courses/1.jpg" alt="img">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="media-heading"><a href="#">Medical Science</a></h4>
-                                                <span class="popular-course-price">$200.00</span>
-                                            </div>
-                                        </div>
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <a href="#">
-                                                    <img class="media-object" src="../../Assets/assets/img/courses/2.jpg" alt="img">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="media-heading"><a href="#">Web Design</a></h4>
-                                                <span class="popular-course-price">$250.00</span>
-                                            </div>
-                                        </div>
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <a href="#">
-                                                    <img class="media-object" src="../../Assets/assets/img/courses/3.jpg" alt="img">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="media-heading"><a href="#">Health & Sports</a></h4>
-                                                <span class="popular-course-price">$90.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end single sidebar -->
-                                <!-- start single sidebar -->
-                                <div class="mu-single-sidebar">
+                                @*<div class="mu-single-sidebar">
                                     <h3>Archives</h3>
                                     <ul class="mu-sidebar-catg mu-sidebar-archives">
                                         <li><a href="#">May <span>(25)</span></a></li>
@@ -246,23 +207,24 @@
                                         <li><a href="">September <span>(45)</span></a></li>
                                         <li><a href="">October <span>(85)</span></a></li>
                                     </ul>
-                                </div>
+                                </div>*@
                                 <!-- end single sidebar -->
-                                <!-- start single sidebar -->
-                                <div class="mu-single-sidebar">
-                                    <h3>Tags Cloud</h3>
-                                    <div class="tag-cloud">
-                                        <a href="#">Health</a>
-                                        <a href="#">Science</a>
-                                        <a href="#">Sports</a>
-                                        <a href="#">Mathematics</a>
-                                        <a href="#">Web Design</a>
-                                        <a href="#">Admission</a>
-                                        <a href="#">History</a>
-                                        <a href="#">Environment</a>
+                                @*@Html.Sitecore().Placeholder("tag-major")*@
+                                @*<!-- start single sidebar -->
+                                    <div class="mu-single-sidebar">
+                                        <h3>Tags Cloud</h3>
+                                        <div class="tag-cloud">
+                                            <a href="#">Health</a>
+                                            <a href="#">Science</a>
+                                            <a href="#">Sports</a>
+                                            <a href="#">Mathematics</a>
+                                            <a href="#">Web Design</a>
+                                            <a href="#">Admission</a>
+                                            <a href="#">History</a>
+                                            <a href="#">Environment</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- end single sidebar -->
+                                    <!-- end single sidebar -->*@
                             </aside>
                             <!-- / end sidebar -->
                         </div>
