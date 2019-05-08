@@ -34,8 +34,15 @@ namespace Sitecore.Feature.Course.Controllers
         }
         public ActionResult TagMajor()
         {
-            var listMajor = Context.Item.Parent.Axes.GetDescendants().Select(item => item[Templates.CourseItem.Fields.Major]).ToArray();
+            var listMajor = Context.Item.Parent.Axes.GetDescendants().Select(item => item[Templates.CourseItem.Fields.Major]).Distinct().ToArray();
             return View("~/Views/Course/_TagMajor.cshtml", listMajor);
+        }
+
+        public ActionResult CourseRelated()
+        {
+            var major = Context.Item.GetChildren()[Templates.CourseItem.Fields.Major];
+            //var listMajor = Context.Item.Parent.Axes.GetDescendants().Select(item => item[Templates.CourseItem.Fields.Major]).Distinct().ToArray();
+            return View("~/Views/Course/_CourseRelated.cshtml", null);
         }
     }
 }

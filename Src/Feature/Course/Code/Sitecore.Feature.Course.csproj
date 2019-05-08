@@ -117,6 +117,7 @@
     <Content Include="Views\Course\_PopularCourse.cshtml" />
     <Content Include="Views\Course\_TagMajor.cshtml" />
     <None Include="Properties\PublishProfiles\sc9.sc.pubxml" />
+    <Content Include="Views\Course\_CourseRelated.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
