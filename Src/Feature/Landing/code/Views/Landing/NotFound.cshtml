@@ -1,0 +1,18 @@
+﻿@using Sitecore.Feature.Landing;
+@using Sitecore.Mvc
+<!-- Start error section  -->
+<section id="mu-error">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-error-area">
+                    <p>@Html.Sitecore().Field(TemplateNotFound.Fields.Title.ToString())</p>
+                    <span>@Html.Sitecore().Field(TemplateNotFound.Fields.Description.ToString())</span>
+                    <h2>@Html.Sitecore().Field(TemplateNotFound.Fields.ErrorCode.ToString())</h2>
+                    <a class="mu-post-btn" href="/">GO TO HOME</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End error section  -->
