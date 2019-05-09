@@ -26,12 +26,11 @@ namespace Sitecore.Foundation.Extenstion.Pipelines
             {
                 return;
             }
-
-            if (Context.Item != null || StartsWithPrefixToIgnore(args.Url.FilePath))
+            //|| StartsWithPrefixToIgnore(args.Url.FilePath)
+            if (Context.Item != null && Context.Item.Axes.Level != 0)
             {
                 return;
             }
-
             var notFoundContent = GetNotFoundPageContent(args);
             if (!string.IsNullOrWhiteSpace(notFoundContent))
             {
