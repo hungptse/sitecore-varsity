@@ -1,10 +1,12 @@
 ﻿using Sitecore.Diagnostics;
 using Sitecore.Mvc.Pipelines.MvcEvents.Exception;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using Sitecore;
+using System.Linq;
+using System.Web;
 
-namespace Vhs.HandleErrorProcessors.Pipelines.MvcException
+namespace Sitecore.Foundation.Extenstion.Pipelines
 {
     public class HandleMvcException : ExceptionProcessor
     {

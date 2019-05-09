@@ -1,14 +1,14 @@
 ﻿using Sitecore;
 using Sitecore.Diagnostics;
 using Sitecore.Links;
-using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Vhs.HandleErrorProcessors.Services;
+using Sitecore.Foundation.Extenstion.Services;
+using Sitecore.Pipelines.HttpRequest;
 
-namespace Vhs.HandleErrorProcessors.Pipelines.HttpRequestBegin
+namespace Sitecore.Foundation.Extenstion.Pipelines
 {
     public class HandleItemNotFound : HttpRequestProcessor
     {
