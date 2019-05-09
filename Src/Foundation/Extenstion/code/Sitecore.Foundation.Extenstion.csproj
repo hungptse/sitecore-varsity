@@ -107,6 +107,7 @@
     <Compile Include="Pipelines\HandleMvcException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\NotFoundItemService.cs" />
+    <Compile Include="StripLanguageConfiguration\StripLangguageCustomize.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
