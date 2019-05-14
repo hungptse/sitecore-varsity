@@ -9,7 +9,7 @@ using System.Web;
 
 namespace Sitecore.Foundation.Extenstion.StripLanguageConfiguration
 {
-    public class StripLangguageCustomize : StripLanguage
+    public class StripLanguageCustomize : StripLanguage
     { 
         /// <summary>Processes the specified arguments.</summary>
         /// <param name="args">The arguments.</param>
@@ -17,7 +17,7 @@ namespace Sitecore.Foundation.Extenstion.StripLanguageConfiguration
         {
             Assert.ArgumentNotNull((object)args, "args");
 
-            Language language = StripLangguageCustomize.ExtractLanguage(args.Context.Request);
+            Language language = ExtractLanguage(args.Context.Request);
             if (language == (Language)null)
             {
                 //if url doesn't contain language name, we will set the default language

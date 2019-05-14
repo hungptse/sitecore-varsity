@@ -26,8 +26,7 @@ namespace Sitecore.Foundation.Extenstion.Pipelines
             {
                 return;
             }
-            //|| StartsWithPrefixToIgnore(args.Url.FilePath)
-            if (Context.Item != null && Context.Item.Axes.Level != 0)
+            if (IsValidContextItemResolved() || StartsWithPrefixToIgnore(args.LocalPath))
             {
                 return;
             }
@@ -41,7 +40,7 @@ namespace Sitecore.Foundation.Extenstion.Pipelines
                 args.Context.Response.End();
             }
 
-            Log.Warn("The not found page: '{0}' shows no content when rendered!", args.Url);
+            Log.Warn($"The not found page: {args.Url} shows no content when rendered!",args.Url);
         }
 
         protected bool StartsWithPrefixToIgnore(string url)
@@ -79,6 +78,14 @@ namespace Sitecore.Foundation.Extenstion.Pipelines
         {
             Assert.ArgumentNotNull(args, "args");
             return args.Context.Request.Url?.GetComponents(UriComponents.Scheme | UriComponents.Host, UriFormat.Unescaped);
+        }
+
+        protected virtual bool IsValidContextItemResolved()
+        {
+            if (Context.Item == null || !(Context.Item.Versions.Count > 0))
+                return false;
+            return !(Context.Item.Visualization.Layout == null
+                     && string.IsNullOrEmpty(WebUtil.GetQueryString("sc_layout")));
         }
     }
 }
