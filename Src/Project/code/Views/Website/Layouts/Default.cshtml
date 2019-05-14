@@ -5,7 +5,8 @@
 <html lang="en">
 <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Varsity | Home</title>
@@ -38,7 +39,16 @@
 	@Html.Sitecore().Placeholder("content")
 
 	@Html.Sitecore().Placeholder("footer")
+    @{ 
+        var mustHave = "/" + Sitecore.Context.Language;
+        var isWithLanguage = HttpContext.Current.Request.Url.AbsoluteUri.Contains(mustHave);
+        if (!isWithLanguage)
+        {
+            var urltmp = Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Item);
+            Response.Redirect(urltmp);
 
+        }
+    }
 	
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="../../Assets/assets/js/bootstrap.js"></script>

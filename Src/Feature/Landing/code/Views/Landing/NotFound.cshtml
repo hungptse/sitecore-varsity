@@ -9,7 +9,7 @@
                     <p>@Html.Sitecore().Field(TemplateNotFound.Fields.Title.ToString())</p>
                     <span>@Html.Sitecore().Field(TemplateNotFound.Fields.Description.ToString())</span>
                     <h2>@Html.Sitecore().Field(TemplateNotFound.Fields.ErrorCode.ToString())</h2>
-                    <a class="mu-post-btn" href="/">GO TO HOME</a>
+                    <a class="mu-post-btn" href="/">@Html.Sitecore().Field(TemplateNotFound.Fields.btnHome.ToString())</a>
                 </div>
             </div>
         </div>
