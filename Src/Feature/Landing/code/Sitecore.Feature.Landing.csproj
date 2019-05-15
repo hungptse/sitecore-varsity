@@ -106,6 +106,7 @@
     <Content Include="Views\Landing\TrueStory.cshtml" />
     <None Include="Properties\PublishProfiles\sc9.sc.pubxml" />
     <Content Include="Views\Landing\NotFound.cshtml" />
+    <Content Include="Views\Landing\Maps.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
