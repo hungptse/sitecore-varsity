@@ -33,18 +33,10 @@
 </section>
 <!-- Adding Sitecore Forms scripts manually as a workaround for SXA at the moment -->
 <script>
-    document.getElementById("fxb_063555f5-7c9f-4a0e-b140-bc104cd9704e_f6fafe4a-9f56-40b3-a967-6ccf4307f1b4").addEventListener("submit", (evt) => {
-        //evt.preventDefault();
-        var name = document.getElementById("fxb_063555f5-7c9f-4a0e-b140-bc104cd9704e_Fields_ec972625-9be0-40fd-861d-120a5fb16f53__Value");
-        var email = document.getElementById("fxb_063555f5-7c9f-4a0e-b140-bc104cd9704e_Fields_017d27e1-db12-4661-964f-f922189d9402__Value");
-        var message = document.getElementById("fxb_063555f5-7c9f-4a0e-b140-bc104cd9704e_Fields_8256374d-72f3-4c38-beda-6c4b9b9001ef__Value");
-        if (name.value.length != 0 && email.value.length != 0 && message.value.length != 0) {
-            //cont 
-            return true;
-        }
-        name.required = true;
-        email.required = true;
-        message.required = true;
-        evt.preventDefault();
-    });
+    var name = document.getElementById("fxb_063555f5-7c9f-4a0e-b140-bc104cd9704e_Fields_ec972625-9be0-40fd-861d-120a5fb16f53__Value").required = true;
+    var email = document.getElementById("fxb_063555f5-7c9f-4a0e-b140-bc104cd9704e_Fields_017d27e1-db12-4661-964f-f922189d9402__Value");
+    var message = document.getElementById("fxb_063555f5-7c9f-4a0e-b140-bc104cd9704e_Fields_8256374d-72f3-4c38-beda-6c4b9b9001ef__Value");
+    email.required = true;
+    email.type = "email";
+    message.required = true;
 </script>

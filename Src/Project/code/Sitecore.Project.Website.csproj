@@ -133,6 +133,7 @@
     <Content Include="App_Config\Include\Project\Varsity.Website.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\Include\Project\SMTP.config" />
     <None Include="Properties\PublishProfiles\sc9.sc.pubxml" />
     <Content Include="Views\Website\Layouts\SubLayouts\Sublayout-6-6.cshtml" />
     <None Include="Web.config" />
